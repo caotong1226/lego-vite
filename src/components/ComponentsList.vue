@@ -9,12 +9,16 @@
       <l-text v-bind="item"></l-text>
     </div>
   </div>
+  <StyledUploader @success="onImageUploaded"></StyledUploader>
 </template>
 
 <script setup lang="ts">
 import { v4 as uuidv4 } from 'uuid'
-import type { TextComponentProps } from '@/defaultProps'
+import { message } from 'ant-design-vue'
+import { imageDefaultProps, type TextComponentProps } from '@/defaultProps'
 import type { ComponentData } from '@/store/editor'
+import type { UploadResp } from '@/extraType'
+import { getImageDimensions } from '@/helper'
 defineProps({
   list: {
     type: Array as PropType<TextComponentProps[]>,
@@ -29,6 +33,24 @@ const onItemClick = (props: TextComponentProps) => {
     props
   }
   emit('on-item-click', componentData)
+}
+const onImageUploaded = (data: { resp: UploadResp; file: File }) => {
+  const { resp, file } = data
+  const componentData: ComponentData = {
+    name: 'l-image',
+    id: uuidv4(),
+    props: {
+      ...imageDefaultProps
+    }
+  }
+  message.success('上传成功')
+  componentData.props.src = resp.data.url
+  getImageDimensions(file).then(({ width }) => {
+    console.log(width)
+    const maxWidth = 373
+    componentData.props.width = (width > maxWidth ? maxWidth : width) + 'px'
+    emit('on-item-click', componentData)
+  })
 }
 </script>
 

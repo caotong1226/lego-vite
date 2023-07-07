@@ -37,14 +37,14 @@ import { DeleteOutlined, LoadingOutlined, FileOutlined } from '@ant-design/icons
 import axios from 'axios'
 import { v4 as uuidv4 } from 'uuid'
 import { last } from 'lodash-es'
-type UploadStaus = 'ready' | 'loading' | 'success' | 'error'
+type UploadStatus = 'ready' | 'loading' | 'success' | 'error'
 type FileListType = 'picture' | 'text'
 type CheckUpload = (file: File) => boolean | Promise<File>
 export interface UploadFile {
   uid: string
   size: number
   name: string
-  status: UploadStaus
+  status: UploadStatus
   raw: File
   resp?: any
   url?: string

@@ -48,7 +48,7 @@ const onChange = (color: string) => {
 }
 </script>
 
-<style>
+<style scoped>
 .lego-color-picker {
   display: flex;
 }

@@ -38,7 +38,7 @@ const logout = () => {
   }, 2000)
 }
 </script>
-<style>
+<style scoped>
 .user-profile-dropdown {
   border-radius: 2px !important;
 }
