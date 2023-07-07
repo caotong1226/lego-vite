@@ -11,27 +11,30 @@
         <a-layout-content class="preview-container">
           <p>画布区域</p>
           <div class="preview-list" id="canvas-area">
-            <component
+            <edit-wrapper
+              @setActive="setElActive"
               v-for="component in components"
               :key="component.id"
-              :is="component.name"
-              v-bind="component.props"
-            />
+              :id="component.id"
+              :active="component.id === currentElementId"
+            >
+              <component :is="component.name" v-bind="component.props" />
+            </edit-wrapper>
           </div>
         </a-layout-content>
       </a-layout>
-      <!-- <a-layout-sider width="300" style="background: #fff" class="settings-panel">
-          组件属性
-          <props-table
-            v-if="currentElement && currentElement.props"
-            :props="currentElement.props"
-            @change="handleChange"
-          ></props-table>
-          <pre>
+      <a-layout-sider width="300" style="background: #fff" class="settings-panel">
+        组件属性
+        <props-table
+          v-if="currentElement && currentElement.props"
+          :props="currentElement.props"
+          @change="handleChange"
+        ></props-table>
+        <pre>
         {{ currentElement && currentElement.props }}
       </pre
-          >
-        </a-layout-sider> -->
+        >
+      </a-layout-sider>
     </a-layout>
   </div>
 </template>
@@ -41,11 +44,22 @@ import { defaultTextTemplates } from '@/defaultTemplates'
 import { storeToRefs } from 'pinia'
 import { useEditorStore } from '@/store'
 const store = useEditorStore()
-const { components } = storeToRefs(store)
-const { addComponent } = store
+const { components, currentElementId } = storeToRefs(store)
+const { addComponent, setActive, updateComponent } = store
 const addItem = (component: any) => {
   addComponent(component)
 }
+const setElActive = (id: string) => {
+  setActive(id)
+}
+
+const handleChange = (e: any) => {
+  updateComponent(e)
+}
+
+const currentElement = computed(() =>
+  components.value.find((component) => component.id === currentElementId.value)
+)
 </script>
 
 <style scoped>

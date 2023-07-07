@@ -12,10 +12,14 @@ declare module 'vue' {
     ALayoutFooter: typeof import('ant-design-vue/es')['LayoutFooter']
     ALayoutHeader: typeof import('ant-design-vue/es')['LayoutHeader']
     ALayoutSider: typeof import('ant-design-vue/es')['LayoutSider']
+    ColorPicker: typeof import('./src/components/ColorPicker.vue')['default']
     ComponentsList: typeof import('./src/components/ComponentsList.vue')['default']
     EditWrapper: typeof import('./src/components/EditWrapper.vue')['default']
     LText: typeof import('./src/components/LText.vue')['default']
+    PropsTable: typeof import('./src/components/PropsTable.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    Uploader: typeof import('./src/components/Uploader.vue')['default']
+    UserProfile: typeof import('./src/components/UserProfile.vue')['default']
   }
 }
