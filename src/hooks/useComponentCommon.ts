@@ -1,5 +1,5 @@
 import { pick } from 'lodash-es'
-import type { TextComponentProps } from '../defaultProps'
+import type { TextComponentProps } from '@/constants/defaultProps'
 const useComponentCommon = (props: Readonly<Partial<TextComponentProps>>, picks: string[]) => {
     const styleProps = computed(() => pick(props, picks))
     const handleClick = () => {

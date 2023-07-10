@@ -6,7 +6,7 @@
 
 <script lang="ts">
 import useComponentCommon from '@/hooks/useComponentCommon'
-import { transformToComponentProps, textDefaultProps, textStylePropNames } from '@/defaultProps'
+import { transformToComponentProps, textDefaultProps, textStylePropNames } from '@/constants/defaultProps'
 const defaultProps = transformToComponentProps(textDefaultProps)
 export default defineComponent({
   name: 'l-text',
@@ -44,3 +44,4 @@ button.l-text-component {
   position: relative !important;
 }
 </style>
+@/components/defaultProps

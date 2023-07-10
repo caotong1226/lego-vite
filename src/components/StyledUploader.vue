@@ -31,7 +31,7 @@
 
 <script lang="ts" setup>
 import { FileImageOutlined, LoadingOutlined } from '@ant-design/icons-vue'
-import { commonUploadCheck } from '../helper'
+import { commonUploadCheck } from '@/utils/helper'
 const emits = defineEmits(['success'])
 
 const handleUploadSuccess = (resp: any, file: File) => {

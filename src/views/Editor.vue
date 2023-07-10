@@ -86,3 +86,4 @@ const currentElement = computed(() =>
   max-height: 80vh;
 }
 </style>
+@/constants/defaultTemplates

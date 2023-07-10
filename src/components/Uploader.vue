@@ -67,7 +67,7 @@ const props = defineProps({
   },
   listType: {
     type: String as PropType<FileListType>,
-    defualt: 'text'
+    default: 'text'
   },
   showUploadList: {
     type: Boolean,

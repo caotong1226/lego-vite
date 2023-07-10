@@ -16,7 +16,7 @@
 
 <script lang="ts" setup>
 import { message } from 'ant-design-vue'
-import { useUserStore, type UserProps } from '../store/user'
+import { useUserStore, type UserProps } from '@/store/user'
 defineProps({
   user: {
     type: Object as PropType<UserProps>,

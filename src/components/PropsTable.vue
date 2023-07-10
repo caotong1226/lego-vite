@@ -27,8 +27,8 @@
 
 <script setup lang="ts">
 import { reduce } from 'lodash-es'
-import { mapPropsToForms } from '@/propsMap'
-import type { TextComponentProps } from '@/defaultProps'
+import { mapPropsToForms } from '@/constants/propsMap'
+import type { TextComponentProps } from '@/constants/defaultProps'
 import RenderVnode from '@/components/RenderVnode'
 interface FormProps {
   component: string

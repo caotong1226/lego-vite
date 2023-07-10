@@ -15,10 +15,10 @@
 <script setup lang="ts">
 import { v4 as uuidv4 } from 'uuid'
 import { message } from 'ant-design-vue'
-import { imageDefaultProps, type TextComponentProps } from '@/defaultProps'
+import { imageDefaultProps, type TextComponentProps } from '@/constants/defaultProps'
 import type { ComponentData } from '@/store/editor'
 import type { UploadResp } from '@/extraType'
-import { getImageDimensions } from '@/helper'
+import { getImageDimensions } from '@/utils/helper'
 defineProps({
   list: {
     type: Array as PropType<TextComponentProps[]>,

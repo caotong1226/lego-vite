@@ -1,5 +1,5 @@
 
-import type { TextComponentProps } from '@/defaultProps';
+import type { TextComponentProps } from '@/constants/defaultProps';
 import { defineStore } from 'pinia';
 import { v4 as uuidv4 } from 'uuid'
 
