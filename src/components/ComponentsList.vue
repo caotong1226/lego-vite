@@ -46,7 +46,6 @@ const onImageUploaded = (data: { resp: UploadResp; file: File }) => {
   message.success('上传成功')
   componentData.props.src = resp.data.url
   getImageDimensions(file).then(({ width }) => {
-    console.log(width)
     const maxWidth = 373
     componentData.props.width = (width > maxWidth ? maxWidth : width) + 'px'
     emit('on-item-click', componentData)

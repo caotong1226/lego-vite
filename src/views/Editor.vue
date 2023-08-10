@@ -40,7 +40,7 @@
 </template>
 
 <script setup lang="ts">
-import { defaultTextTemplates } from '@/defaultTemplates'
+import { defaultTextTemplates } from '@/constants/defaultTemplates'
 import { storeToRefs } from 'pinia'
 import { useEditorStore } from '@/store'
 const store = useEditorStore()

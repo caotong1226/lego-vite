@@ -117,6 +117,15 @@ const postFile = (readyFile: UploadFile) => {
     })
     .catch((e: any) => {
       readyFile.status = 'error'
+      // 模拟数据
+      emits('success', {
+        resp: {
+          data: { url: 'https://cdn1.hlcdn.cc/mall/app/front/after_sale/264478065562910.jpg' }
+        },
+        file: readyFile,
+        list: filesList.value
+      })
+      // 模拟数据
       emits('error', { error: e, file: readyFile, list: filesList.value })
     })
     .finally(() => {

@@ -44,4 +44,3 @@ button.l-text-component {
   position: relative !important;
 }
 </style>
-@/components/defaultProps

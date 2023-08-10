@@ -1,32 +1,40 @@
 {
-  "extends": "@vue/tsconfig/tsconfig.web.json",
-  "include": ["env.d.ts", "src/**/*", "src/**/*.vue"],
   "compilerOptions": {
-    "ignoreDeprecations": "5.0",
     "target": "esnext",
-    "useDefineForClassFields": true,
     "module": "esnext",
-    "moduleResolution": "node",
     "strict": true,
-    "sourceMap": true,
     "jsx": "preserve",
+    "importHelpers": true,
+    "moduleResolution": "node",
     "skipLibCheck": true,
-    "resolveJsonModule": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-    "verbatimModuleSyntax": true,
-    "lib": ["esnext", "dom"],
+    "sourceMap": true,
     "baseUrl": ".",
-    "types": ["vite/client", "node"],
+    "types": [
+      "webpack-env",
+      "jest"
+    ],
     "paths": {
-      "@": ["src"],
-      "@/*": ["src/*"],
-      "~/*": ["src/*"]
-    }
+      "@/*": [
+        "src/*"
+      ]
+    },
+    "lib": [
+      "esnext",
+      "dom",
+      "dom.iterable",
+      "scripthost"
+    ]
   },
-  "references": [
-    {
-      "path": "./tsconfig.node.json"
-    }
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    "tests/**/*.ts",
+    "tests/**/*.tsx"
+  ],
+  "exclude": [
+    "node_modules"
   ]
 }
